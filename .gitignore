@@ -1,0 +1,9 @@
+###> n3ttech/base ###
+vendor
+.idea
+.DS_Store
+###> n3ttech/base ###;
+
+###> n3ttech/checking ###
+.php_cs.cache
+###> n3ttech/checking ###
