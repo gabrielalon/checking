@@ -59,6 +59,7 @@ vendor
 
 ###> n3ttech/checking ###
 .php_cs.cache
+.phpunit.result.cache
 ###> n3ttech/checking ###';
 
             file_put_contents($rootPath.'/.gitignore', $content);
