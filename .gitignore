@@ -1,5 +1,6 @@
 ###> n3ttech/base ###
 vendor
+composer.lock
 .idea
 .DS_Store
 ###> n3ttech/base ###;

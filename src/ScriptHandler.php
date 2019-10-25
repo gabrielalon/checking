@@ -3,6 +3,7 @@
 namespace N3ttech\Checking;
 
 use Composer\Config;
+use Composer\Package\PackageInterface;
 use Composer\Script\Event;
 
 class ScriptHandler
@@ -47,20 +48,23 @@ class ScriptHandler
         if (false === file_exists($rootPath.'/.gitignore')) {
             touch($rootPath.'/.gitignore');
         }
-
+	
+		/** @var PackageInterface $package */
+		$package = $event->getComposer()->getPackage();
         $content = file_get_contents($rootPath.'/.gitignore');
 
-        if (false === strpos($content, 'n3ttech/base')) {
-            $content .= '###> n3ttech/base ###
+        if (false === strpos($content, $package->getName())) {
+            $content .= sprintf('###> %1$s ###
 vendor
+composer.lock
 .idea
 .DS_Store
-###> n3ttech/base ###;
+###> %1$s ###;
 
 ###> n3ttech/checking ###
 .php_cs.cache
 .phpunit.result.cache
-###> n3ttech/checking ###';
+###> n3ttech/checking ###', $package->getName());
 
             file_put_contents($rootPath.'/.gitignore', $content);
             $event->getIO()->write('<info>Updating .gitingore</info>');
