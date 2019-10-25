@@ -23,6 +23,5 @@
     "merge-plugin": {
       "merge-dev": true
     }
-  },
-  "version": "1.0"
+  }
 }
