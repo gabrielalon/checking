@@ -22,8 +22,12 @@ cs: ## executes php cs fixer
 cs-check: ## executes php cs fixer in dry run mode
 		./vendor/bin/php-cs-fixer --no-interaction --dry-run --diff -v fix
 
+.PHONY: test
+test: ## executes phpunit tests
+		./vendor/bin/phpunit --do-not-cache-result --colors=always
+
 .PHONY: cs-style
-cs-style: cs cs-check style ## executes php cs fixer, executes php cs fixer in dry run mode and executes php analizers
+cs-style: cs cs-check style test ## executes php cs fixer, executes php cs fixer in dry run mode and executes php analizers
 
 .PHONY: help
 help: ## Display this help message

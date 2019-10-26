@@ -1,7 +1,5 @@
 {
   "name": "n3ttech/checking",
-  "type": "library",
-  "description": "Library for adding php cs makefile and phpstan fot n3ttech projects",
   "keywords": ["checking"],
   "license": "MIT",
   "authors": [{"name": "n3ttech", "email": "mrode@n3tte.ch"}],
@@ -12,16 +10,5 @@
   },
   "require": {
     "php": ">=7.3"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^8.4",
-    "phpstan/phpstan": "^0.11.19",
-    "friendsofphp/php-cs-fixer": "^2.15",
-    "squizlabs/php_codesniffer": "^3.5"
-  },
-  "extra": {
-    "merge-plugin": {
-      "merge-dev": true
-    }
   }
 }
