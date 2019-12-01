@@ -60,11 +60,7 @@ composer.lock
 .idea
 .DS_Store
 ###> %1$s ###;
-
-###> n3ttech/checking ###
-.php_cs.cache
-.phpunit.result.cache
-###> n3ttech/checking ###', $package->getName());
+', $package->getName());
 
             file_put_contents($rootPath.'/.gitignore', $content);
             $event->getIO()->write('<info>Updating .gitingore</info>');

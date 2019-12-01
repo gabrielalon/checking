@@ -2,6 +2,7 @@
 
 $config = PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
+    ->setUsingCache(false)
     ->setRules([
         '@Symfony' => true,
         'no_superfluous_phpdoc_tags' => []
